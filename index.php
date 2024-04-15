@@ -48,19 +48,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Document</title>
+    <title>php-hotel</title>
 </head>
 <body>
 <div class="container my-5">
-<ul>
-  <?php
-  foreach ($hotels as $hotelClass){
-    foreach($hotelClass as $hotel){
-      echo '<li>' . $hotel;
-    }
-  }
-  ?>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Parking</th>
+      <th scope="col">Vote</th>
+      <th scope="col">Distance from the center</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($hotels as $hotelClass) { ?>
+    <tr>
+      <th scope="row"><?php echo $hotelClass['name']; ?></th>
+      <td><?php echo $hotelClass['description']; ?></td>
+      <td><?php echo $hotelClass['parking']; ?></td>
+      <td><?php echo $hotelClass['vote']; ?></td>
+      <td><?php echo $hotelClass['distance_to_center']; ?></td>
+
+    </tr>
+    <?php } ?>
+  </tbody>
+</table>
 
 </div>
 </body>
